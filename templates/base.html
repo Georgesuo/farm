@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        {% block title %} {% endblock %}
+    </title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"   integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css"     integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"     integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- 一般的HTML档案，再加上模板符的指定，在这些模板指令中。没有意外，使用 include 引入指定的模板 -->
+    <div class="container-fluid">
+        {% include 'header.html' %}
+        <div class="row">
+            <div class="col-sm-4 col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3>MENU</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="list-group">
+                            <a href="/" class="list-group-item">HOME</a>
+                            <a href="http://www.92code.vip" class="list-group-item">时事热点</a>
+                            <a href="http://python.92code.vip" class="list-group-item">电视新闻</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8 col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        {% block headmessage %} {% endblock %}
+                    </div>
+                    <div class="panel-body">
+                        {% block content %} {% endblock %}
+                    </div>
+                    <div class="panel-footer">
+                        {% include 'footer.html' %}
+                    </div>
+                </div>
+            </div>
+        </div>       
+    </div>
+    <!-- 再就是为base.html适当的位置制定title/headmassage和contend等
+    约定的规范内容的显示位置 -->
+
+    <!-- base.html模板制定了3个区块，所以集成它的其他页面，一定要提供这3个区块的内容 -->
+
+    <!-- 通过CDN的方式引入使用bootstrap开发框架 -->
+</body>
+
+</html>

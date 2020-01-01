@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from mainsite.views import homepage, showpost
 
 urlpatterns = [
+    #后面不跟任何字符串的，都去url呼叫homepage函数
+    url(r'^$',homepage),
+    #将所有post/开头的网址后面的字符串都找出来，当做是第二个参数传递给showpost这个函数。
+    url(r'^post/(\w+)$', showpost),
     url(r'^admin/', admin.site.urls),
 ]

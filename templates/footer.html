@@ -1,0 +1,10 @@
+<!-- footer.html -->
+
+{% block footer %}
+    <!-- 使用if来判断now变量是否有内容指令，如果有就显示，没有就只显示全全生命。 -->
+    {% if now %}
+    <p style="font-family: 'Times New Roman';">现在时间：{{ now }}</p>
+    {% else %}
+    <p style="font-family: 'Times New Roman';">本文内容取自网络，如有侵权请来信通知下价架</p>
+    {% endif %}
+{% endblock %}
